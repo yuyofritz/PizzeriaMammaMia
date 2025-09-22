@@ -1,32 +1,30 @@
-
-import { Navbar as BSNavbar, Button, Container } from 'react-bootstrap';
+import React from "react";
 
 const Navbar = () => {
     const total = 25000;
     const token = false;
 
     return (
-        <BSNavbar bg="dark" variant="dark">
-            <Container>
-                <BSNavbar.Brand>Pizzería Mamma Mia!</BSNavbar.Brand>
-                <BSNavbar.Toggle />
-                <BSNavbar.Collapse className="justify-content-end">
-                    <Button variant="outline-light" className="me-2">🍕 Home</Button>
-                    {token ? (
-                        <>
-                            <Button variant="outline-light" className="me-2">🔓 Profile</Button>
-                            <Button variant="outline-light" className="me-2">🔒 Logout</Button>
-                        </>
-                    ) : (
-                        <>
-                            <Button variant="outline-light" className="me-2">🔐 Login</Button>
-                            <Button variant="outline-light" className="me-2">🔐 Register</Button>
-                        </>
-                    )}
-                    <Button variant="outline-light">🛒 Total: ${total.toLocaleString('es-CL')}</Button>
-                </BSNavbar.Collapse>
-            </Container>
-        </BSNavbar>
+        <nav className="navbar navbar-dark bg-dark px-3">
+            <span className="navbar-brand">🍕 Pizzería Mamma Mía</span>
+            <div className="d-flex gap-2">
+                <button className="btn btn-outline-light">Home</button>
+                {token ? (
+                    <>
+                        <button className="btn btn-outline-light">Profile</button>
+                        <button className="btn btn-outline-light">Logout</button>
+                    </>
+                ) : (
+                    <>
+                        <button className="btn btn-outline-light">Login</button>
+                        <button className="btn btn-outline-light">Register</button>
+                    </>
+                )}
+                <button className="btn btn-success">
+                    🛒 Total: ${total.toLocaleString("es-CL")}
+                </button>
+            </div>
+        </nav>
     );
 };
 

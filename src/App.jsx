@@ -1,20 +1,16 @@
 import React from "react";
-import Header from "./components/header.jsx";
-import Footer from "./components/footer.jsx";
-import PizzaList from "./components/PizzaList.jsx";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import Footer from "./components/footer";
 
-function App() {
+const App = () => {
   return (
     <>
-      <Header />
-      <main className="container my-5">
-        <PizzaList /> {}
-      </main>
+      <Navbar />
+      <Home />
       <Footer />
     </>
   );
-}
+};
 
 export default App;
-
-

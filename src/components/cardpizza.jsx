@@ -1,26 +1,19 @@
-import { Card, Button, ListGroup } from 'react-bootstrap';
+import React from "react";
 
 const CardPizza = ({ name, price, ingredients, img }) => {
     return (
-        <Card>
-            <Card.Img variant="top" src={img} />
-            <Card.Body>
-                <Card.Title>{name}</Card.Title>
-                <ListGroup variant="flush">
-                    <ListGroup.Item><strong>Ingredientes:</strong></ListGroup.Item>
-                    {ingredients.map((ing, index) => (
-                        <ListGroup.Item key={index}>🍕 {ing}</ListGroup.Item>
-                    ))}
-                </ListGroup>
-                <Card.Text className="text-center mt-3">
-                    <h4>${price.toLocaleString('es-CL')}</h4>
-                </Card.Text>
+        <div className="card shadow">
+            <img src={img} className="card-img-top" alt={name} />
+            <div className="card-body">
+                <h5 className="card-title">{name}</h5>
+                <p>Ingredientes: {ingredients.join(", ")}</p>
+                <p className="fw-bold">Precio: ${price.toLocaleString("es-CL")}</p>
                 <div className="d-flex justify-content-between">
-                    <Button variant="primary">Ver Más 👀</Button>
-                    <Button variant="warning">Añadir 🛒</Button>
+                    <button className="btn btn-outline-primary">Ver más 👀</button>
+                    <button className="btn btn-success">Añadir 🛒</button>
                 </div>
-            </Card.Body>
-        </Card>
+            </div>
+        </div>
     );
 };
 
